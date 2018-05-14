@@ -1,39 +1,13 @@
-# Day 14
+# Exercises
 
-There are separate branches for Segment 1 and Segment 2 in this repository. Both segments include two things:
+This segment has two exercises:
 
-1) Coding exercises
+1) ### Setting Up Router
+  
+    Go to `Exercises/01-SetupRouter` directory and refer to the README for instructions about this exercise.
 
-2) Written/Multiple Choice questions
+2) ### Writing Router tests
 
-The reason for two separate branches for two segments is to have separate test suites run on travis CI.
+    - Second exercise in this segment is to write tests for the Single Page Application you will make before this.
 
-### Instructions:
-
-1) Clone this repo using
-  ```
-    git clone <link to repo>
-  ```
-
-2) Change directory
-  ```
-    cd <Folder Name>
-  ```
-
-3) Install dependencies
-  ```
-    yarn
-  ```
-
-4) To do the exercises in branch `segment-1`
-  ```
-    git checkout -b segment-1
-    git pull origin segment-1
-  ```
-
-5) Do your work and then push to the branch
-  ```
-    git add .
-    git commit -m "your commit message"
-    git push origin segment-1
-  ```
+    - Write tests for wether the correct components mount when routes change. Simulate click event on navbar items to test wether navbar also works as expected.
