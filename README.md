@@ -11,3 +11,5 @@ This segment has two exercises:
     - Second exercise in this segment is to write tests for the Single Page Application you will make before this.
 
     - Write tests for wether the correct components mount when routes change. Simulate click event on navbar items to test wether navbar also works as expected.
+
+    - Test wether the `404` component renders if user enters a non-matching path like `/hawwypotha`.
