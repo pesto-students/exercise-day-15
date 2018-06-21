@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -23,11 +23,11 @@ class App extends Component {
         <Link to="/contact">
           <Contact />
         </Link>
-
-        <Route path="/home" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
       </Fragment>
     );
   }
