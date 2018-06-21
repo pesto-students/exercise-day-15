@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import NoMatch from './components/NoMatch';
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -13,20 +14,13 @@ class App extends Component {
     return (
       <Fragment>
         <Navbar />
-        <Link to="/home">
-          <Home />
-        </Link>
-        <Link to="/about">
-          <About />
-        </Link>
-        <Link to="/contact">
-          <Contact />
-        </Link>
+
 
         <Switch>
           <Route exact path="/home" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
+          <Route component={NoMatch} />
         </Switch>
       </Fragment>
 
