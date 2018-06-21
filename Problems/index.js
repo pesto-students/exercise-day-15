@@ -10,7 +10,8 @@ function pathSatisfies() {
 
 /* Q2 (*)
  * Returns a new list with the given element at the front, followed by the
- * contents of the list.
+ * contents of the list.  // arr.unshift(element);
+  // return arr;
  *
  *      R.prepend('fee', ['fi', 'fo', 'fum']); //=> ['fee', 'fi', 'fo', 'fum']
  */
