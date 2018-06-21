@@ -22,6 +22,11 @@ body {
   align-items: center;
   flex: 1;
   justify-content: center;
+  text-decoration: none;
+}
+
+.nav li a {
+  text-decoration: none;
 }
 
 .active {
