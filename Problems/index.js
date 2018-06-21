@@ -5,7 +5,9 @@
  *   pathSatisfies(y => y > 0, ['x', 'y'], {x: {y: 2}}); //=> true
  */
 
-function pathSatisfies() {}
+function pathSatisfies() {
+
+}
 
 /* Q2 (*)
  * Returns a new list with the given element at the front, followed by the
@@ -47,7 +49,9 @@ function prop(propKey) {
  *      R.reject(isOdd, {a: 1, b: 2, c: 3, d: 4}); //=> {b: 2, d: 4}
  */
 
-function reject() {}
+function reject(fn, container) {
+  return container.filter(item => fn(item) !== true);
+}
 
 /* Q5
  * Evaluate reverse polish notation (RPN). To learn about RPN see:
@@ -61,7 +65,8 @@ function reject() {}
  * output: Number that results from evaluating the input.
  */
 
-function reversePolish() {}
+function reversePolish() {
+}
 
 module.exports = {
   pathSatisfies,
