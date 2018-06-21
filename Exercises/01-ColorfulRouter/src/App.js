@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 // import { Switch, Route, Redirect, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import './styles/App.css';
 import ColorList from './components/ColorList';
-// import Color from './components/Color';
+import Color from './components/Color';
 // import NewColor from './components/NewColor';
 
 class App extends Component {
@@ -38,7 +39,10 @@ class App extends Component {
     );
 
     return (
-      colorListComponent()
+      <div>
+        <Route exact path="/colors" component={colorListComponent} />
+        <Route path="/colors/:color" component={Color} colors={this.state.colors} />
+      </div>
     );
   }
 }
