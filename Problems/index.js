@@ -14,7 +14,12 @@ function pathSatisfies() {}
  *      R.prepend('fee', ['fi', 'fo', 'fum']); //=> ['fee', 'fi', 'fo', 'fum']
  */
 
-function prepend() {}
+function prepend(item, arr) {
+  return [
+    item,
+    ...arr,
+  ];
+}
 
 /* Q3 (*)
  * Returns a function that when supplied an object returns the indicated
@@ -24,7 +29,9 @@ function prepend() {}
  *      prop('x', {}); //=> undefined
  */
 
-function prop() {}
+function prop(propKey) {
+  return obj => obj[propKey];
+}
 
 /* Q4 (*)
  * The complement of [`filter`](#filter).
