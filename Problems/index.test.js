@@ -26,7 +26,7 @@ describe('1 pathSatisfies', () => {
   });
 });
 
-describe('2 prepend', () => {
+describe.only('2 prepend', () => {
   it('adds the element to the beginning of the list', () => {
     expect(prepend('x', ['y', 'z'])).toEqual(['x', 'y', 'z']);
     expect(prepend(['a', 'z'], ['x', 'y'])).toEqual([['a', 'z'], 'x', 'y']);

@@ -5,7 +5,8 @@
  *   pathSatisfies(y => y > 0, ['x', 'y'], {x: {y: 2}}); //=> true
  */
 
-function pathSatisfies() {}
+function pathSatisfies() {
+}
 
 /* Q2 (*)
  * Returns a new list with the given element at the front, followed by the
@@ -14,7 +15,10 @@ function pathSatisfies() {}
  *      R.prepend('fee', ['fi', 'fo', 'fum']); //=> ['fee', 'fi', 'fo', 'fum']
  */
 
-function prepend() {}
+function prepend(element, arr) {
+  arr.unshift(element);
+  return arr;
+}
 
 /* Q3 (*)
  * Returns a function that when supplied an object returns the indicated
@@ -24,7 +28,7 @@ function prepend() {}
  *      prop('x', {}); //=> undefined
  */
 
-function prop() {}
+function prop() { }
 
 /* Q4 (*)
  * The complement of [`filter`](#filter).
@@ -40,7 +44,7 @@ function prop() {}
  *      R.reject(isOdd, {a: 1, b: 2, c: 3, d: 4}); //=> {b: 2, d: 4}
  */
 
-function reject() {}
+function reject() { }
 
 /* Q5
  * Evaluate reverse polish notation (RPN). To learn about RPN see:
@@ -54,7 +58,7 @@ function reject() {}
  * output: Number that results from evaluating the input.
  */
 
-function reversePolish() {}
+function reversePolish() { }
 
 module.exports = {
   pathSatisfies,
