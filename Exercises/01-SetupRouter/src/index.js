@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+// import { root } from 'postcss';
+// import { router } from 'sw-toolbox';
 
 ReactDOM.render(
-  <App />,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root'),
 );
 registerServiceWorker();

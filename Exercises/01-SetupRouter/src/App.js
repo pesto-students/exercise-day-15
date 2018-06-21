@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -12,10 +13,22 @@ class App extends Component {
     return (
       <Fragment>
         <Navbar />
-        <Home />
-        <About />
-        <Contact />
+        <Link to="/home">
+          <Home />
+        </Link>
+        <Link to="/about">
+          <About />
+        </Link>
+        <Link to="/contact">
+          <Contact />
+        </Link>
+
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/contact" component={Contact} />
+
       </Fragment>
+
     );
   }
 }
