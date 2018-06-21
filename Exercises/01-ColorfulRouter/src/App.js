@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import { Switch, Route, Redirect, Link } from 'react-router-dom';
 
 import './styles/App.css';
+// import { Routes } from './routes/routes';
 import ColorList from './components/ColorList';
 // import Color from './components/Color';
 // import NewColor from './components/NewColor';
