@@ -1,4 +1,4 @@
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 
 
@@ -10,7 +10,7 @@ export default class Navbar extends Component {
       <ul className="nav">
         <li className="active"><Link to="/">Home</Link></li>
         <li><Link to="/About">About</Link></li>
-        <li><Link to="/Contact  ">Contact</Link></li>
+        <li><Link to="/Contact">Contact</Link></li>
       </ul>
     );
   }

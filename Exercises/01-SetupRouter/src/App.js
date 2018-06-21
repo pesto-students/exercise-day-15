@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -11,17 +11,19 @@ import './styles/App.css';
 class App extends Component {
   render() {
     return (
-      <div>
-        <Link to="/home"><Home /></Link>
+      <Router>
         <div>
-          {/* <Navbar /> */}
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
+          {/* <Link to="/home"><Home /></Link>
+          <Link to="/About"><About /></Link>
+          <Link to="/Contact"><Contact /></Link> */}
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
         </div>
-        <Link to="/About"><About /></Link>
-        <Link to="/Contact"><Contact /></Link>
-      </div>
+      </Router>
     );
   }
 }
