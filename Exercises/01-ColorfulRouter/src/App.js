@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-// import { Switch, Route, Redirect, Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Switch, Route, Redirect, Link } from 'react-router-dom';
 
+import Main from './components/Route';
 import './styles/App.css';
 import ColorList from './components/ColorList';
 // import Color from './components/Color';
@@ -34,7 +35,10 @@ class App extends Component {
 
   render() {
     const colorListComponent = () => (
-      <ColorList colors={this.state.colors} />
+      <div>
+        <Main />
+        <ColorList colors={this.state.colors} />
+      </div>
     );
 
     return (
