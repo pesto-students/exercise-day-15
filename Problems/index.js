@@ -40,7 +40,17 @@ function prop() {}
  *      R.reject(isOdd, {a: 1, b: 2, c: 3, d: 4}); //=> {b: 2, d: 4}
  */
 
-function reject() {}
+function reject(funct, arr) {
+  if (arr.length !== 0) {
+    const newArr = arr.filter(funct);
+    const finalArr = arr.filter(val => newArr.find(val) === false);
+    if (finalArr.length === 0) {
+      return [];
+    }
+    return finalArr;
+  }
+  return [];
+}
 
 /* Q5
  * Evaluate reverse polish notation (RPN). To learn about RPN see:
