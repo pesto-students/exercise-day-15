@@ -16,8 +16,9 @@ function pathSatisfies() {
  */
 
 function prepend(element, arr) {
-  arr.unshift(element);
-  return arr;
+  return [element, ...arr];
+  // arr.unshift(element);
+  // return arr;
 }
 
 /* Q3 (*)
