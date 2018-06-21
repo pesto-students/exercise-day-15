@@ -1,21 +1,16 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import Navbar from './components/Navbar';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
+import MyRoutes from './MyRoutes';
 
 import './styles/App.css';
 
 class App extends Component {
   render() {
     return (
-      <Fragment>
-        <Navbar />
-        <Home />
-        <About />
-        <Contact />
-      </Fragment>
+      <div> <Navbar />
+        <MyRoutes />
+      </div>
     );
   }
 }
