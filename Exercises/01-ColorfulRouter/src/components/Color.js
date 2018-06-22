@@ -6,7 +6,6 @@ import '../styles/Color.css';
 
 const Color = (props) => {
   const { color } = props;
-  // console.log(color);
   return (
     <div className="Color" style={{ backgroundColor: color.hex }}>
       <p>this is {color.name}.</p>

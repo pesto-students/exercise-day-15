@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-// import { Switch, Route, Redirect, Link } from 'react-router-dom';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import './styles/App.css';
 import ColorList from './components/ColorList';
 import Color from './components/Color';
-// import NewColor from './components/NewColor';
+import NewColor from './components/NewColor';
 
 class App extends Component {
   constructor(props) {
@@ -38,10 +37,22 @@ class App extends Component {
       <ColorList colors={this.state.colors} />
     );
 
+    const colorComponent = ({ match }) => (
+      <Color color={(this.state.colors.filter(color => color.name === match.params.color))[0]} />
+    );
+
+    const newColorComponent = props => (
+      <NewColor {...props} addColor={this.handleAdd} />
+    );
+
     return (
       <div>
-        <Route exact path="/colors" component={colorListComponent} />
-        <Route path="/colors/:color" component={Color} colors={this.state.colors} />
+        <Switch>
+          <Route exact path="/colors" component={colorListComponent} />
+          <Route path="/colors/new" component={newColorComponent} />
+          <Route path="/colors/:color" component={colorComponent} />
+          <Route component={colorListComponent} />
+        </Switch>
       </div>
     );
   }
