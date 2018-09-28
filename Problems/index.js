@@ -5,7 +5,13 @@
  *   pathSatisfies(y => y > 0, ['x', 'y'], {x: {y: 2}}); //=> true
  */
 
-function pathSatisfies() {}
+function pathSatisfies(predFn, propPath, obj) {
+  if (propPath.length === 0) return false;
+  if (propPath.length === 1) return predFn(obj[propPath[0]]);
+
+  return Reflect.has(obj, propPath[0]) &&
+    pathSatisfies(predFn, propPath.slice(1), obj[propPath[0]]);
+}
 
 /* Q2 (*)
  * Returns a new list with the given element at the front, followed by the
@@ -14,7 +20,9 @@ function pathSatisfies() {}
  *      R.prepend('fee', ['fi', 'fo', 'fum']); //=> ['fee', 'fi', 'fo', 'fum']
  */
 
-function prepend() {}
+function prepend(elem, list) {
+  return [elem].concat(list);
+}
 
 /* Q3 (*)
  * Returns a function that when supplied an object returns the indicated
@@ -24,7 +32,9 @@ function prepend() {}
  *      prop('x', {}); //=> undefined
  */
 
-function prop() {}
+function prop(key) {
+  return obj => obj[key];
+}
 
 /* Q4 (*)
  * The complement of [`filter`](#filter).
@@ -40,7 +50,10 @@ function prop() {}
  *      R.reject(isOdd, {a: 1, b: 2, c: 3, d: 4}); //=> {b: 2, d: 4}
  */
 
-function reject() {}
+function reject(predFn, arr) {
+  // TODO: handle objects
+  return arr.reduce((acc, elem) => (predFn(elem) ? acc : acc.concat(elem)), []);
+}
 
 /* Q5
  * Evaluate reverse polish notation (RPN). To learn about RPN see:
@@ -54,7 +67,33 @@ function reject() {}
  * output: Number that results from evaluating the input.
  */
 
-function reversePolish() {}
+function reversePolish(input) {
+  const stack = [];
+  input.forEach((elem) => {
+    if (typeof elem === 'number') stack.push(elem);
+    else {
+      if (stack.length < 2) {
+        throw new Error(`Cannot apply operator ${elem} to less than 2 operands`);
+      }
+
+      const rOperand = stack.pop();
+      const lOperand = stack.pop();
+      let result;
+      switch (elem) {
+        case '+': result = lOperand + rOperand; break;
+        case '-': result = lOperand - rOperand; break;
+        case '*': result = lOperand * rOperand; break;
+        case '/': result = lOperand / rOperand; break;
+        default: throw new Error(`Unknown operator ${elem}`);
+      }
+      stack.push(result);
+    }
+  });
+
+  if (stack.length !== 1) throw new Error(`Invalid input: ${input}`);
+
+  return stack[0];
+}
 
 module.exports = {
   pathSatisfies,
