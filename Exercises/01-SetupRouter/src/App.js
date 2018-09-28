@@ -7,7 +7,7 @@ import Contact from './components/Contact';
 
 import './styles/App.css';
 
-const NoMatch = () => <h2>404</h2>;
+export const NoMatch = () => <h2>404</h2>;
 
 class App extends Component {
   render() {
