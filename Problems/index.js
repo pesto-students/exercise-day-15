@@ -20,7 +20,9 @@ function pathSatisfies(predFn, propPath, obj) {
  *      R.prepend('fee', ['fi', 'fo', 'fum']); //=> ['fee', 'fi', 'fo', 'fum']
  */
 
-function prepend() { }
+function prepend(elem, list) {
+  return [elem].concat(list);
+}
 
 /* Q3 (*)
  * Returns a function that when supplied an object returns the indicated
