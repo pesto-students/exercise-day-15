@@ -50,7 +50,10 @@ function prop(key) {
  *      R.reject(isOdd, {a: 1, b: 2, c: 3, d: 4}); //=> {b: 2, d: 4}
  */
 
-function reject() { }
+function reject(predFn, arr) {
+  // TODO: handle objects
+  return arr.reduce((acc, elem) => (predFn(elem) ? acc : acc.concat(elem)), []);
+}
 
 /* Q5
  * Evaluate reverse polish notation (RPN). To learn about RPN see:
