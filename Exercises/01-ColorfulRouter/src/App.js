@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-// import { Switch, Route, Redirect, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import './styles/App.css';
 import ColorList from './components/ColorList';
-// import Color from './components/Color';
+import Color from './components/Color';
 // import NewColor from './components/NewColor';
-
+// eslint-disable-next-line
+const ColorFound = ({ match }) => {
+  const clr = match.params.color;
+  const found = this.state.find(o => o.name === clr);
+  return <Color color={found} />;
+};
 class App extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +43,14 @@ class App extends Component {
     );
 
     return (
-      colorListComponent()
+      <Route>
+        <div>
+          <Switch>
+            <Route path="/colors" component={colorListComponent}>Home</Route>
+            <Route path="/colors/:id" component={ColorFound} />
+          </Switch>
+        </div>
+      </Route>
     );
   }
 }
