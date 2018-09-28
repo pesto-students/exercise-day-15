@@ -32,7 +32,9 @@ function prepend(elem, list) {
  *      prop('x', {}); //=> undefined
  */
 
-function prop() { }
+function prop(key) {
+  return obj => obj[key];
+}
 
 /* Q4 (*)
  * The complement of [`filter`](#filter).
